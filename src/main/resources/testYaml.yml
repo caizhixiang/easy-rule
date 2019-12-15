@@ -1,0 +1,8 @@
+--- 
+- !com.example.easyrule.RulesDto
+  actions: "\"System.out.println(\\\"-----------------\\\")\""
+  condition: number % 2 == 0
+  description: ceshixccesdlfjalsdfsdj1
+  name: fizzbuzz rule1
+  priority: 1
+- !com.example.easyrule.RulesDto {}
