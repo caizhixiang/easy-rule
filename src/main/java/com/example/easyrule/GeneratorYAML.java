@@ -21,11 +21,11 @@ public class GeneratorYAML {
 
         list.add(rulesDto);
         RulesDto rulesDto1 = new RulesDto();
-        rulesDto.setName("fizzbuzz rule1");
-        rulesDto.setDescription("ceshixccesdlfjalsdfsdj1");
-        rulesDto.setCondition("number % 2 == 0");
-        rulesDto.setActions("\"System.out.println(\\\"-----------------\\\")\"");
-        rulesDto.setPriority(1);
+        rulesDto1.setName("fizzbuzz rule1");
+        rulesDto1.setDescription("ceshixccesdlfjalsdfsdj1");
+        rulesDto1.setCondition("number % 2 == 0");
+        rulesDto1.setActions("\"System.out.println(\\\"-----------------\\\")\"");
+        rulesDto1.setPriority(1);
 
         list.add(rulesDto1);
 

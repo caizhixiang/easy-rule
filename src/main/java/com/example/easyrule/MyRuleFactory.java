@@ -1,6 +1,7 @@
 package com.example.easyrule;
 
 import org.ho.yaml.Yaml;
+import org.ho.yaml.YamlStream;
 import org.jeasy.rules.api.Rule;
 import org.jeasy.rules.api.Rules;
 import org.jeasy.rules.mvel.MVELRule;
@@ -12,29 +13,18 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MyRuleFactory extends MVELRuleFactory {
+public class MyRuleFactory {
     public List<RulesDto> rulesDtos = null;
 
     public MyRuleFactory() {
 
     }
 
-    public static Rules createRulesFrom(Reader rulesDescriptor)  {
+    public static Rules createRulesFrom(List<RulesDto> list) {
         Rules rules = new Rules(new Rule[0]);
-
-        File dumpFile = new File("C:\\java\\easy-rule\\src\\main\\resources\\testYaml.yml");
-        RulesDto father = null;
-        try {
-//            father = (RulesDto) Yaml.loadType(dumpFile, RulesDto.class);
-           Object o= Yaml.loadStream(rulesDescriptor);
-        } catch (Exception e) {
-            e.printStackTrace();
+        for (RulesDto dto : list) {
+            rules.register(create(dto));
         }
-
-        List<RulesDto> ruleDefinition = new ArrayList<>();
-        ruleDefinition.add(father);
-
-        rules.register(create(father));
 
         return rules;
     }
